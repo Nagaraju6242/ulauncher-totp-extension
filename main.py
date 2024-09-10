@@ -40,11 +40,14 @@ class KeywordQueryEventListener(EventListener):
     def on_event(self, event, extension):
         items = []
         services = get_services()
+        argument = event.get_argument()
         for service in services:
-            data = {"service": service}
-            items.append(ExtensionResultItem(icon=f'{ICONS_HOME}/{service}.png',
+            if argument and argument not in service:
+                continue
+            else:
+                items.append(ExtensionResultItem(icon=f'{ICONS_HOME}/{service}.png',
                                              name=service,
-                                             on_enter=ExtensionCustomAction(data, keep_app_open=True)))
+                                             on_enter=ExtensionCustomAction({"service": service}, keep_app_open=True)))
 
         return RenderResultListAction(items)
 

@@ -12,7 +12,7 @@
       "id": "keyword",
       "type": "keyword",
       "name": "totp",
-      "default_value": "totp"
+      "default_value": "tp"
     }
   ]
 }
