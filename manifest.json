@@ -1,0 +1,18 @@
+{
+  "required_api_version": "2",
+  "name": "TOTP",
+  "description": "used to generate Time based One time passwords",
+  "developer_name": "Nagaraju Repala",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 0.1
+  },
+  "preferences": [
+    {
+      "id": "keyword",
+      "type": "keyword",
+      "name": "totp",
+      "default_value": "totp"
+    }
+  ]
+}
